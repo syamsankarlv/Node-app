@@ -4,9 +4,9 @@ pipeline {
     dockerimagename = "sankarlvsyam/node-web-app:latest"
     dockerImage = ""
   }
-
-  agent any
   
+  agent any
+  stage {
     stage('Build image') {
       steps{
         script {
