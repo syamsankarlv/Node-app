@@ -4,9 +4,17 @@ pipeline {
     dockerimagename = "sankarlvsyam/node-web-app:latest"
     dockerImage = ""
   }
-  
+
   agent any
-  stage {
+
+  stages {
+
+    stage('Checkout Source') {
+      steps {
+        git 'https://github.com/syamsankarlv/Node-app.git'
+      }
+    }
+
     stage('Build image') {
       steps{
         script {
@@ -35,3 +43,7 @@ pipeline {
         }
       }
     }
+
+  }
+
+}
